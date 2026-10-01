@@ -1,15 +1,35 @@
 # Panel de administración de Print Home (Decap CMS).
 # Al guardar, los cambios se suben a GitHub y el hosting vuelve a publicar el sitio solo.
+# Login con DecapBridge (correo y contraseña, Google o Microsoft). Usuarios: decapbridge.com/dashboard
 backend:
-  name: github
+  name: git-gateway
   repo: TomasG07/print-home
   branch: main
-  # En producción, el login con correo y contraseña lo da DecapBridge (decapbridge.com):
-  # ahí se crea el sitio y se reemplaza este bloque por el que indica su panel.
+  auth_type: pkce
+  base_url: https://auth.decapbridge.com
+  auth_endpoint: /sites/ff5b93e8-8525-4c22-82b6-38caf3e255e8/pkce
+  auth_token_endpoint: /sites/ff5b93e8-8525-4c22-82b6-38caf3e255e8/token
+  gateway_url: https://gateway.decapbridge.com
+
+  # Cada cambio queda en GitHub con el nombre de quien lo hizo
+  commit_messages:
+    create: Create {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    update: Update {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    delete: Delete {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    uploadMedia: Upload “{{path}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    deleteMedia: Delete “{{path}}” - {{author-name}} <{{author-login}}> via DecapBridge
+    openAuthoring: Message {{message}} - {{author-name}} <{{author-login}}> via DecapBridge
+
+auth:
+  email_claim: email
+  first_name_claim: first_name
+  last_name_claim: last_name
+  avatar_url_claim: avatar_url
 
 # En la compu: npm run dev levanta también decap-server y el panel entra sin contraseña.
 local_backend: true
 locale: es
+site_url: https://tomasg07.github.io/print-home/
 
 media_folder: public/img/subidas
 public_folder: /img/subidas
