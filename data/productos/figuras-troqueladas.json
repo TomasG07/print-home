@@ -24,12 +24,16 @@
   ],
   "fotos": [
     {
-      "foto": "https://images.unsplash.com/photo-1604668915840-580c30026e5f",
-      "alt": "Decoración de mesa para fiesta"
+      "foto": "/img/trabajos/figuras-trajes-tipicos.jpg",
+      "alt": "Figuras troqueladas con trajes típicos costarricenses"
     },
     {
-      "foto": "https://images.unsplash.com/photo-1643175816971-a463dee6ae61",
-      "alt": "Banderín de feliz cumpleaños con decoración"
+      "foto": "/img/trabajos/figura-publicitaria.jpg",
+      "alt": "Figura troquelada publicitaria de tamaño real para punto de venta"
+    },
+    {
+      "foto": "/img/trabajos/backdrop-accion-de-gracias.jpg",
+      "alt": "Figuras troqueladas de pavos junto a un backdrop circular"
     }
   ]
 }

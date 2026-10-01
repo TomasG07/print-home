@@ -43,8 +43,8 @@
   "hero": {
     "titular": "Que tu negocio se vea desde la otra cuadra.",
     "bajada": "Diseñamos, imprimimos e instalamos todo lo que hace que tu marca se note.",
-    "foto": "https://images.unsplash.com/photo-1503694978374-8a2fa686963a",
-    "alt": "Máquina de impresión trabajando en el taller"
+    "foto": "/img/trabajos/figuras-trajes-tipicos.jpg",
+    "alt": "Figuras troqueladas con trajes típicos costarricenses frente a la impresora del taller"
   },
   "trabajosEntregados": 1200,
   "email": "hola@printhome.example",
