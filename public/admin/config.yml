@@ -13,7 +13,7 @@ locale: es
 
 media_folder: public/img/subidas
 public_folder: /img/subidas
-logo_url: /img/favicon.svg
+logo_url: ../img/favicon.svg
 
 collections:
   # ---------- Productos: uno por archivo, se pueden agregar nuevos ----------
