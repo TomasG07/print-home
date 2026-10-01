@@ -1,20 +1,27 @@
 {
-  "nombre": "Print Home",
+  "horario": [
+    {
+      "dias": "Lunes a viernes",
+      "horas": "8:00 a 17:30"
+    },
+    {
+      "dias": "Sábado",
+      "horas": "8:00 a 12:00"
+    },
+    {
+      "dias": "Domingo",
+      "horas": "Cerrado"
+    }
+  ],
   "eslogan": "Calidad al instante",
-  "url": "https://tomasg07.github.io/print-home",
-  "whatsapp": "50600000000",
-  "telefono": "+506 0000-0000",
-  "email": "hola@printhome.example",
-  "direccion": "San José, Costa Rica",
   "zona": "San José",
+  "nombre": "Print Home",
+  "url": "https://tomasg07.github.io/print-home",
+  "direccion": "San José, Costa Rica",
   "mapsQuery": "San José, Costa Rica",
-  "mensajeWhatsApp": "¡Hola Print Home! Vi su sitio web y quiero cotizar",
-  "hero": {
-    "titular": "Que tu negocio se vea desde la otra cuadra.",
-    "bajada": "Diseñamos, imprimimos e instalamos todo lo que hace que tu marca se note.",
-    "foto": "https://images.unsplash.com/photo-1503694978374-8a2fa686963a",
-    "alt": "Máquina de impresión trabajando en el taller"
-  },
+  "mensajeWhatsApp": "¡Hola! Vi su sitio web y quiero cotizar",
+  "whatsapp": "50687918636",
+  "telefono": "+506 0000-0000",
   "datosHero": [
     {
       "etiqueta": "Diseño",
@@ -33,21 +40,14 @@
       "valor": "La hacemos nosotros"
     }
   ],
+  "hero": {
+    "titular": "Que tu negocio se vea desde la otra cuadra.",
+    "bajada": "Diseñamos, imprimimos e instalamos todo lo que hace que tu marca se note.",
+    "foto": "https://images.unsplash.com/photo-1503694978374-8a2fa686963a",
+    "alt": "Máquina de impresión trabajando en el taller"
+  },
   "trabajosEntregados": 1200,
-  "horario": [
-    {
-      "dias": "Lunes a viernes",
-      "horas": "8:00 a 17:30"
-    },
-    {
-      "dias": "Sábado",
-      "horas": "8:00 a 12:00"
-    },
-    {
-      "dias": "Domingo",
-      "horas": "Cerrado"
-    }
-  ],
+  "email": "hola@printhome.example",
   "redes": [
     {
       "nombre": "Instagram",
