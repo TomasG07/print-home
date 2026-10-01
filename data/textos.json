@@ -1,0 +1,54 @@
+{
+  "botones": {
+    "cabecera": "Cotizar por WhatsApp",
+    "heroPrincipal": "Cotizar ahora",
+    "heroSecundario": "Ver trabajos",
+    "producto": "Cotizar este producto",
+    "pedir": "Empezar mi pedido",
+    "contacto": "Escribir por WhatsApp",
+    "pie": "Escribinos"
+  },
+  "heroEtiqueta": "Rótulos · Letras corpóreas · Vinil · Impresos · Fiestas",
+  "productos": {
+    "titulo": "¿Qué necesitás?"
+  },
+  "trabajos": {
+    "titulo": "Trabajos reales.",
+    "bajada": "Nada de fotos de catálogo: todo lo que ves lo hicimos nosotros."
+  },
+  "pedir": {
+    "titulo": "Cómo pedir.",
+    "pasos": [
+      {
+        "titulo": "Contanos qué necesitás",
+        "texto": "Por WhatsApp, con una foto, un dibujo o una idea. No hace falta saber de medidas ni de materiales."
+      },
+      {
+        "titulo": "Aprobás el diseño",
+        "texto": "Te mandamos la prueba. Si algo no te convence, lo ajustamos. No imprimimos nada sin tu visto bueno."
+      },
+      {
+        "titulo": "Lo producimos y entregamos",
+        "texto": "Imprimimos, cortamos y, si hace falta, lo instalamos nosotros."
+      }
+    ],
+    "infoTitulo": "¿Qué info necesito enviar?",
+    "info": [
+      "Medidas (aproximadas sirven para empezar)",
+      "Cantidad",
+      "Logo o textos",
+      "Fecha en la que lo necesitás"
+    ]
+  },
+  "faq": {
+    "titulo": "Preguntas frecuentes"
+  },
+  "contacto": {
+    "titulo": "Escribinos.",
+    "subtitulo": "Te respondemos rápido.",
+    "formularioTitulo": "¿No usás WhatsApp? Dejanos tus datos"
+  },
+  "pie": {
+    "frase": "¿Lo imprimimos?"
+  }
+}

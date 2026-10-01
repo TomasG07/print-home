@@ -1,0 +1,37 @@
+{
+  "nombre": "Volantes",
+  "mundo": "promo",
+  "orden": 1,
+  "publicado": true,
+  "resumen": "Volantes a todo color para repartir, dejar en el mostrador o meter en cada pedido.",
+  "precioDesde": 9500,
+  "unidad": "por 100 unidades",
+  "entrega": "2 días hábiles",
+  "acabado": "Brillante o mate",
+  "usos": [
+    "Promociones",
+    "Inauguraciones",
+    "Delivery",
+    "Eventos"
+  ],
+  "tamanos": [
+    "Media carta",
+    "Un cuarto de carta",
+    "Carta"
+  ],
+  "materiales": [
+    "Bond",
+    "Couché 115 g",
+    "Couché 150 g"
+  ],
+  "fotos": [
+    {
+      "foto": "https://images.unsplash.com/photo-1562240020-ce31ccb0fa7d",
+      "alt": "Pila de pliegos recién impresos"
+    },
+    {
+      "foto": "https://images.unsplash.com/photo-1422036306541-00138cae4dbc",
+      "alt": "Papeles de colores para volantes"
+    }
+  ]
+}

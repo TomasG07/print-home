@@ -1,0 +1,35 @@
+{
+  "nombre": "Tarjetas de presentación",
+  "mundo": "promo",
+  "orden": 5,
+  "publicado": true,
+  "resumen": "Tarjetas que dan ganas de guardar.",
+  "precioDesde": 6000,
+  "unidad": "por 100 unidades",
+  "entrega": "2 días hábiles",
+  "acabado": "Mate, brillante o laminado",
+  "usos": [
+    "Emprendedores",
+    "Profesionales",
+    "Equipos de venta",
+    "Citas y fidelización"
+  ],
+  "tamanos": [
+    "9 × 5 cm"
+  ],
+  "materiales": [
+    "Cartulina 300 g",
+    "Opalina",
+    "Couché con laminado"
+  ],
+  "fotos": [
+    {
+      "foto": "https://images.unsplash.com/photo-1718670013921-2f144aba173a",
+      "alt": "Tarjetas de presentación sobre un mostrador de mármol"
+    },
+    {
+      "foto": "https://images.unsplash.com/photo-1628891439478-c613e85af7d6",
+      "alt": "Tarjeta de presentación negra en la mano"
+    }
+  ]
+}

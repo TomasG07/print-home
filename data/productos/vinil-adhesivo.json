@@ -1,0 +1,40 @@
+{
+  "nombre": "Vinil adhesivo",
+  "mundo": "local",
+  "orden": 4,
+  "publicado": true,
+  "resumen": "Calcomanías, rotulación de vehículos y vinil de corte para cualquier superficie lisa.",
+  "precioDesde": 10000,
+  "unidad": "por m²",
+  "entrega": "3 días hábiles",
+  "acabado": "Mate o brillante, con laminado opcional",
+  "usos": [
+    "Vehículos",
+    "Paredes",
+    "Calcomanías y etiquetas",
+    "Mostradores y vitrinas"
+  ],
+  "tamanos": [
+    "Desde 5 × 5 cm",
+    "Rollos de hasta 1,50 m de ancho"
+  ],
+  "materiales": [
+    "Vinil impreso",
+    "Vinil de corte",
+    "Vinil reflectivo"
+  ],
+  "fotos": [
+    {
+      "foto": "https://images.unsplash.com/photo-1783330657532-b061952958c4",
+      "alt": "Furgoneta rotulada con vinil impreso"
+    },
+    {
+      "foto": "https://images.unsplash.com/photo-1694876899669-9f76db41bd9c",
+      "alt": "Vehículo rotulado con vinil a todo color"
+    },
+    {
+      "foto": "https://images.unsplash.com/photo-1736422048747-53c0b93f54fc",
+      "alt": "Auto de empresa rotulado"
+    }
+  ]
+}

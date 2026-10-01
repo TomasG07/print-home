@@ -1,0 +1,15 @@
+{
+  "mostrar": true,
+  "titulo": "Vehículo de reparto",
+  "producto": "vinil-adhesivo",
+  "material": "Vinil impreso laminado",
+  "cliente": "",
+  "antes": {
+    "foto": "https://images.unsplash.com/photo-1562925256-59f0ca4b6a45",
+    "alt": "Furgoneta sin rotular"
+  },
+  "despues": {
+    "foto": "https://images.unsplash.com/photo-1783330657532-b061952958c4",
+    "alt": "Furgoneta rotulada con vinil impreso"
+  }
+}

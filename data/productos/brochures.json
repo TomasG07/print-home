@@ -1,0 +1,35 @@
+{
+  "nombre": "Brochures",
+  "mundo": "promo",
+  "orden": 2,
+  "publicado": true,
+  "resumen": "Brochures doblados en dos o tres partes para explicar bien lo que ofrecés.",
+  "precioDesde": 25000,
+  "unidad": "por 100 unidades",
+  "entrega": "3 días hábiles",
+  "acabado": "Brillante o mate, doblado incluido",
+  "usos": [
+    "Catálogos de servicios",
+    "Presentaciones de empresa",
+    "Clínicas y consultorios",
+    "Ferias"
+  ],
+  "tamanos": [
+    "Carta en tríptico",
+    "Carta en díptico"
+  ],
+  "materiales": [
+    "Couché 150 g",
+    "Couché 200 g"
+  ],
+  "fotos": [
+    {
+      "foto": "https://images.unsplash.com/photo-1695634281181-b2357af34c61",
+      "alt": "Brochure tríptico doblado"
+    },
+    {
+      "foto": "https://images.unsplash.com/photo-1695634621375-0b66a9d5d1bc",
+      "alt": "Brochure abierto con fotografía"
+    }
+  ]
+}

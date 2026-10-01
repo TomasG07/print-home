@@ -1,0 +1,19 @@
+{
+  "mundos": [
+    {
+      "id": "local",
+      "titulo": "Para tu local",
+      "bajada": "Lo que la gente ve antes de entrar."
+    },
+    {
+      "id": "promo",
+      "titulo": "Para promocionar tu negocio",
+      "bajada": "Lo que la gente se lleva en la mano."
+    },
+    {
+      "id": "fiesta",
+      "titulo": "Para tu fiesta",
+      "bajada": "Lo que sale en todas las fotos."
+    }
+  ]
+}

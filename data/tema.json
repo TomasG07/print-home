@@ -1,0 +1,14 @@
+{
+  "fondo": "#F4F1EA",
+  "tinta": "#161616",
+  "boton": "#161616",
+  "botonTexto": "#F4F1EA",
+  "botonSombra": "#FFED00",
+  "botonOscuro": "#FFED00",
+  "botonOscuroTexto": "#161616",
+  "acento": "#00A0E3",
+  "resaltado": "#FFED00",
+  "paso1": "#00A0E3",
+  "paso2": "#E6007E",
+  "paso3": "#FFED00"
+}

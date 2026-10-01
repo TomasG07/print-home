@@ -1,0 +1,12 @@
+{
+  "name": "print-home-sitio",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/build.mjs && node scripts/servir.mjs"
+  },
+  "devDependencies": {
+    "decap-server": "^3.11.3"
+  }
+}

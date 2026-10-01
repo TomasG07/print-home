@@ -1,0 +1,37 @@
+{
+  "nombre": "Menús",
+  "mundo": "promo",
+  "orden": 4,
+  "publicado": true,
+  "resumen": "Menús para restaurante, sodas y cafeterías que aguantan el uso diario.",
+  "precioDesde": 4500,
+  "unidad": "por unidad",
+  "entrega": "2 días hábiles",
+  "acabado": "Plastificado mate o brillante",
+  "usos": [
+    "Restaurantes",
+    "Sodas",
+    "Cafeterías",
+    "Food trucks"
+  ],
+  "tamanos": [
+    "Carta",
+    "Media carta",
+    "Tabloide"
+  ],
+  "materiales": [
+    "Couché 300 g",
+    "PVC",
+    "Plastificado"
+  ],
+  "fotos": [
+    {
+      "foto": "https://images.unsplash.com/photo-1731412235213-678ada5cd36b",
+      "alt": "Menú impreso sobre la mesa de un café"
+    },
+    {
+      "foto": "https://images.unsplash.com/photo-1557499305-bd68d0ad468d",
+      "alt": "Menús impresos para restaurante"
+    }
+  ]
+}

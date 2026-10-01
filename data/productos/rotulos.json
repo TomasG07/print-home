@@ -1,0 +1,41 @@
+{
+  "nombre": "Rótulos",
+  "mundo": "local",
+  "orden": 1,
+  "publicado": true,
+  "resumen": "Rótulos para fachada, con o sin luz, hechos a la medida de tu local.",
+  "precioDesde": 25000,
+  "unidad": "por m²",
+  "entrega": "5 días hábiles",
+  "acabado": "Mate o brillante",
+  "usos": [
+    "Fachadas de locales",
+    "Rótulos de bandera",
+    "Señalética interna",
+    "Rótulos para eventos y ferias"
+  ],
+  "tamanos": [
+    "A la medida de tu fachada",
+    "Desde 1 × 0,5 m"
+  ],
+  "materiales": [
+    "Lona impresa",
+    "PVC espumado",
+    "Acrílico",
+    "Aluminio compuesto (ACM)"
+  ],
+  "fotos": [
+    {
+      "foto": "https://images.unsplash.com/photo-1561710309-9a739908b336",
+      "alt": "Rótulo de fachada de un local comercial"
+    },
+    {
+      "foto": "https://images.unsplash.com/photo-1754326450638-840ba690a379",
+      "alt": "Rótulo de bandera colgado en una fachada"
+    },
+    {
+      "foto": "https://images.unsplash.com/photo-1771448905733-eaecea7c9bb4",
+      "alt": "Rótulo iluminado de noche"
+    }
+  ]
+}

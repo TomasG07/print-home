@@ -1,0 +1,35 @@
+{
+  "nombre": "Figuras troqueladas",
+  "mundo": "fiesta",
+  "orden": 2,
+  "publicado": true,
+  "resumen": "Figuras cortadas a la forma que quieras para decorar mesas, paredes y entradas.",
+  "precioDesde": 7500,
+  "unidad": "por unidad",
+  "entrega": "3 días hábiles",
+  "acabado": "Con base para pararse",
+  "usos": [
+    "Decoración de mesas",
+    "Entradas de fiesta",
+    "Photo booths",
+    "Vitrinas de temporada"
+  ],
+  "tamanos": [
+    "Desde 30 cm",
+    "Hasta 1,80 m de alto"
+  ],
+  "materiales": [
+    "PVC espumado",
+    "Cartón pluma"
+  ],
+  "fotos": [
+    {
+      "foto": "https://images.unsplash.com/photo-1604668915840-580c30026e5f",
+      "alt": "Decoración de mesa para fiesta"
+    },
+    {
+      "foto": "https://images.unsplash.com/photo-1643175816971-a463dee6ae61",
+      "alt": "Banderín de feliz cumpleaños con decoración"
+    }
+  ]
+}

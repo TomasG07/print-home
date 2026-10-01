@@ -1,0 +1,275 @@
+# Panel de administración de Print Home (Decap CMS).
+# Al guardar, los cambios se suben a GitHub y el hosting vuelve a publicar el sitio solo.
+backend:
+  name: github
+  repo: USUARIO/print-home   # ← cambiar por el repositorio real
+  branch: main
+  # En producción, el login con correo y contraseña lo da DecapBridge (decapbridge.com):
+  # ahí se crea el sitio y se reemplaza este bloque por el que indica su panel.
+
+# En la compu: npm run dev levanta también decap-server y el panel entra sin contraseña.
+local_backend: true
+locale: es
+
+media_folder: public/img/subidas
+public_folder: /img/subidas
+logo_url: /img/favicon.svg
+
+collections:
+  # ---------- Productos: uno por archivo, se pueden agregar nuevos ----------
+  - name: productos
+    label: Productos
+    label_singular: Producto
+    description: Cada producto tiene su propia página en el sitio.
+    folder: data/productos
+    extension: json
+    format: json
+    create: true
+    delete: true
+    slug: "{{nombre}}"
+    identifier_field: nombre
+    summary: "{{nombre}} · {{mundo}}"
+    sortable_fields: [orden, nombre, mundo]
+    fields:
+      - { name: nombre, label: Nombre, widget: string }
+      - name: mundo
+        label: Sección
+        widget: select
+        options:
+          - { label: Para tu local, value: local }
+          - { label: Para promocionar tu negocio, value: promo }
+          - { label: Para tu fiesta, value: fiesta }
+      - { name: orden, label: Orden dentro de la sección, widget: number, value_type: int, default: 10, hint: "1 aparece primero." }
+      - { name: publicado, label: Mostrar en el sitio, widget: boolean, default: true }
+      - { name: resumen, label: Descripción corta, widget: text, hint: "Una o dos frases. Se ve debajo del nombre." }
+      - { name: precioDesde, label: "Precio desde (₡)", widget: number, value_type: int, required: false, hint: "Solo el número, sin ₡ ni puntos. Vacío = 'por confirmar'." }
+      - { name: unidad, label: Unidad del precio, widget: string, required: false, hint: "Ej.: por m², por 100 unidades, por unidad" }
+      - { name: entrega, label: Tiempo de entrega, widget: string, required: false, hint: "Ej.: 3 días hábiles" }
+      - { name: acabado, label: Acabado, widget: string, required: false }
+      - { name: usos, label: Usos, widget: list, required: false, field: { name: uso, label: Uso, widget: string } }
+      - { name: tamanos, label: Tamaños, widget: list, required: false, field: { name: tamano, label: Tamaño, widget: string } }
+      - { name: materiales, label: Materiales, widget: list, required: false, field: { name: material, label: Material, widget: string } }
+      - name: fotos
+        label: Fotos
+        label_singular: Foto
+        widget: list
+        hint: La primera es la principal.
+        fields:
+          - { name: foto, label: Foto, widget: image }
+          - { name: alt, label: "Qué se ve en la foto", widget: string, hint: "Para Google y lectores de pantalla. Sin nombres de personajes ni marcas." }
+
+  # ---------- Trabajos de la galería ----------
+  - name: trabajos
+    label: Trabajos (galería)
+    label_singular: Trabajo
+    folder: data/trabajos
+    extension: json
+    format: json
+    create: true
+    delete: true
+    slug: "trabajo-{{year}}{{month}}{{day}}-{{hour}}{{minute}}{{second}}"
+    identifier_field: titulo
+    summary: "{{titulo}}"
+    sortable_fields: [orden, titulo]
+    fields:
+      - { name: titulo, label: Título, widget: string }
+      - { name: foto, label: Foto, widget: image }
+      - { name: alt, label: "Qué se ve en la foto", widget: string }
+      - { name: producto, label: Producto, widget: relation, collection: productos, value_field: "{{slug}}", search_fields: [nombre], display_fields: [nombre] }
+      - name: mundo
+        label: Filtro de la galería
+        widget: select
+        options:
+          - { label: Tu local, value: local }
+          - { label: Tu negocio, value: promo }
+          - { label: Tu fiesta, value: fiesta }
+      - { name: material, label: Material, widget: string, required: false }
+      - { name: cliente, label: "Cliente (solo si autorizó)", widget: string, required: false }
+      - name: forma
+        label: Tamaño en la galería
+        widget: select
+        default: cuadrada
+        options:
+          - { label: Cuadrada, value: cuadrada }
+          - { label: Ancha, value: ancha }
+          - { label: Alta, value: alta }
+      - { name: orden, label: Orden, widget: number, value_type: int, default: 50 }
+
+  # ---------- Páginas de un solo archivo ----------
+  - name: ajustes
+    label: Datos del negocio
+    files:
+      - name: negocio
+        label: Contacto, horario y portada
+        file: data/negocio.json
+        fields:
+          - { name: nombre, label: Nombre, widget: string }
+          - { name: eslogan, label: Eslogan, widget: string }
+          - { name: whatsapp, label: "WhatsApp (con 506, solo números)", widget: string, hint: "Ej.: 50688887777" }
+          - { name: mensajeWhatsApp, label: Mensaje inicial de WhatsApp, widget: string }
+          - { name: telefono, label: Teléfono, widget: string, required: false }
+          - { name: email, label: Correo, widget: string, required: false }
+          - { name: direccion, label: Dirección, widget: string, required: false }
+          - { name: zona, label: "Zona (para Google)", widget: string, required: false, hint: "Ej.: San José" }
+          - { name: mapsQuery, label: Búsqueda para el mapa, widget: string, required: false, hint: "Como lo buscarías en Google Maps." }
+          - { name: url, label: "Dirección del sitio", widget: string, required: false, hint: "Ej.: https://printhome.cr" }
+          - name: hero
+            label: Portada
+            widget: object
+            fields:
+              - { name: titular, label: Titular, widget: string, hint: "Las dos últimas palabras van resaltadas en amarillo." }
+              - { name: bajada, label: Texto debajo del titular, widget: text }
+              - { name: foto, label: Foto principal, widget: image }
+              - { name: alt, label: "Qué se ve en la foto", widget: string }
+          - name: datosHero
+            label: Datos debajo de la portada
+            label_singular: Dato
+            widget: list
+            max: 4
+            fields:
+              - { name: etiqueta, label: Etiqueta, widget: string }
+              - { name: valor, label: Valor, widget: string }
+          - { name: trabajosEntregados, label: "Trabajos entregados (solo si es real)", widget: number, value_type: int, required: false }
+          - name: horario
+            label: Horario
+            label_singular: Día
+            widget: list
+            fields:
+              - { name: dias, label: Días, widget: string }
+              - { name: horas, label: Horas, widget: string }
+          - name: redes
+            label: Redes sociales
+            label_singular: Red
+            widget: list
+            fields:
+              - { name: nombre, label: Red, widget: string }
+              - { name: url, label: Enlace, widget: string, required: false }
+
+      - name: tema
+        label: Colores
+        file: data/tema.json
+        description: "Tocá cada color para cambiarlo. Cuidá que el texto se lea bien sobre su fondo."
+        fields:
+          - { name: boton, label: "Botones de WhatsApp: fondo", widget: color }
+          - { name: botonTexto, label: "Botones de WhatsApp: texto", widget: color }
+          - { name: botonSombra, label: "Botones de WhatsApp: sombra", widget: color }
+          - { name: botonOscuro, label: "Botones sobre fondo negro (galería y pie): fondo", widget: color }
+          - { name: botonOscuroTexto, label: "Botones sobre fondo negro: texto", widget: color }
+          - { name: resaltado, label: "Resaltado (subrayado del titular, filtro elegido, etiquetas)", widget: color }
+          - { name: acento, label: "Detalles (subrayado de enlaces, flechas, checks)", widget: color }
+          - { name: paso1, label: "Sombra del número 1 en Cómo pedir", widget: color }
+          - { name: paso2, label: "Sombra del número 2", widget: color }
+          - { name: paso3, label: "Sombra del número 3", widget: color }
+          - { name: fondo, label: "Fondo del sitio (papel)", widget: color }
+          - { name: tinta, label: "Texto y secciones oscuras (tinta)", widget: color }
+
+      - name: textos
+        label: Textos del sitio
+        file: data/textos.json
+        description: "En los títulos grandes, la primera palabra queda en una línea y el resto en la siguiente."
+        fields:
+          - { name: heroEtiqueta, label: "Línea chica arriba del titular", widget: string }
+          - name: botones
+            label: Botones
+            widget: object
+            fields:
+              - { name: cabecera, label: "Menú de arriba", widget: string }
+              - { name: heroPrincipal, label: "Portada: botón principal", widget: string }
+              - { name: heroSecundario, label: "Portada: botón secundario", widget: string }
+              - { name: producto, label: "Página de producto", widget: string }
+              - { name: pedir, label: "Cómo pedir", widget: string }
+              - { name: contacto, label: "Contacto", widget: string }
+              - { name: pie, label: "Pie de página", widget: string }
+          - name: productos
+            label: Sección productos
+            widget: object
+            fields:
+              - { name: titulo, label: Título, widget: string }
+          - name: trabajos
+            label: Sección trabajos
+            widget: object
+            fields:
+              - { name: titulo, label: Título, widget: string }
+              - { name: bajada, label: Frase, widget: string }
+          - name: pedir
+            label: Sección cómo pedir
+            widget: object
+            fields:
+              - { name: titulo, label: Título, widget: string }
+              - name: pasos
+                label: Pasos
+                label_singular: Paso
+                widget: list
+                max: 3
+                min: 3
+                fields:
+                  - { name: titulo, label: Título, widget: string }
+                  - { name: texto, label: Texto, widget: text }
+              - { name: infoTitulo, label: "Título del desplegable", widget: string }
+              - { name: info, label: "Lista de lo que hay que enviar", widget: list, field: { name: item, label: Item, widget: string } }
+          - name: faq
+            label: Sección preguntas
+            widget: object
+            fields:
+              - { name: titulo, label: Título, widget: string }
+          - name: contacto
+            label: Sección contacto
+            widget: object
+            fields:
+              - { name: titulo, label: Título, widget: string }
+              - { name: subtitulo, label: "Segunda línea (contorneada)", widget: string }
+              - { name: formularioTitulo, label: "Título del formulario", widget: string }
+          - name: pie
+            label: Pie de página
+            widget: object
+            fields:
+              - { name: frase, label: Frase grande, widget: string }
+
+      - name: mundos
+        label: Secciones de productos
+        file: data/mundos.json
+        fields:
+          - name: mundos
+            label: Secciones
+            widget: list
+            allow_add: false
+            allow_remove: false
+            fields:
+              - { name: id, label: "Código (no cambiar)", widget: hidden }
+              - { name: titulo, label: Título, widget: string }
+              - { name: bajada, label: Frase, widget: string }
+
+      - name: antes-despues
+        label: Antes y después
+        file: data/antes-despues.json
+        fields:
+          - { name: mostrar, label: Mostrar en el sitio, widget: boolean, default: true }
+          - { name: titulo, label: Título, widget: string }
+          - { name: producto, label: Producto, widget: relation, collection: productos, value_field: "{{slug}}", search_fields: [nombre], display_fields: [nombre] }
+          - { name: material, label: Material, widget: string, required: false }
+          - { name: cliente, label: "Cliente (solo si autorizó)", widget: string, required: false }
+          - name: antes
+            label: Antes
+            widget: object
+            fields:
+              - { name: foto, label: Foto, widget: image }
+              - { name: alt, label: "Qué se ve", widget: string }
+          - name: despues
+            label: Después
+            widget: object
+            fields:
+              - { name: foto, label: Foto, widget: image, hint: "Ideal: misma toma que la de antes." }
+              - { name: alt, label: "Qué se ve", widget: string }
+
+      - name: faq
+        label: Preguntas frecuentes
+        file: data/faq.json
+        fields:
+          - name: preguntas
+            label: Preguntas
+            label_singular: Pregunta
+            widget: list
+            summary: "{{fields.pregunta}}"
+            fields:
+              - { name: pregunta, label: Pregunta, widget: string }
+              - { name: respuesta, label: Respuesta, widget: text }

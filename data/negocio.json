@@ -1,0 +1,65 @@
+{
+  "nombre": "Print Home",
+  "eslogan": "Calidad al instante",
+  "url": null,
+  "whatsapp": "50600000000",
+  "telefono": "+506 0000-0000",
+  "email": "hola@printhome.example",
+  "direccion": "San José, Costa Rica",
+  "zona": "San José",
+  "mapsQuery": "San José, Costa Rica",
+  "mensajeWhatsApp": "¡Hola Print Home! Vi su sitio web y quiero cotizar",
+  "hero": {
+    "titular": "Que tu negocio se vea desde la otra cuadra.",
+    "bajada": "Diseñamos, imprimimos e instalamos todo lo que hace que tu marca se note.",
+    "foto": "https://images.unsplash.com/photo-1503694978374-8a2fa686963a",
+    "alt": "Máquina de impresión trabajando en el taller"
+  },
+  "datosHero": [
+    {
+      "etiqueta": "Diseño",
+      "valor": "Incluido en tu pedido"
+    },
+    {
+      "etiqueta": "Entrega",
+      "valor": "Desde 24 horas"
+    },
+    {
+      "etiqueta": "Cobertura",
+      "valor": "Todo el GAM"
+    },
+    {
+      "etiqueta": "Instalación",
+      "valor": "La hacemos nosotros"
+    }
+  ],
+  "trabajosEntregados": 1200,
+  "horario": [
+    {
+      "dias": "Lunes a viernes",
+      "horas": "8:00 a 17:30"
+    },
+    {
+      "dias": "Sábado",
+      "horas": "8:00 a 12:00"
+    },
+    {
+      "dias": "Domingo",
+      "horas": "Cerrado"
+    }
+  ],
+  "redes": [
+    {
+      "nombre": "Instagram",
+      "url": "https://www.instagram.com/"
+    },
+    {
+      "nombre": "Facebook",
+      "url": "https://www.facebook.com/"
+    },
+    {
+      "nombre": "TikTok",
+      "url": "https://www.tiktok.com/"
+    }
+  ]
+}

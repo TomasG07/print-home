@@ -1,0 +1,35 @@
+{
+  "nombre": "Backdrops circulares",
+  "mundo": "fiesta",
+  "orden": 1,
+  "publicado": true,
+  "resumen": "Fondos circulares personalizados para cumpleaños, baby showers y eventos.",
+  "precioDesde": 28000,
+  "unidad": "por unidad",
+  "entrega": "4 días hábiles",
+  "acabado": "Funda ajustable",
+  "usos": [
+    "Cumpleaños infantiles",
+    "Baby showers",
+    "Bodas y quinceañeras",
+    "Eventos de marca"
+  ],
+  "tamanos": [
+    "1,5 m de diámetro",
+    "2 m de diámetro"
+  ],
+  "materiales": [
+    "Lona elástica impresa",
+    "Con estructura metálica opcional"
+  ],
+  "fotos": [
+    {
+      "foto": "https://images.unsplash.com/photo-1560128411-79892dd93bf8",
+      "alt": "Decoración de fiesta con arco de globos"
+    },
+    {
+      "foto": "https://images.unsplash.com/photo-1741969494307-55394e3e4071",
+      "alt": "Fondo decorado para una fiesta de cumpleaños"
+    }
+  ]
+}

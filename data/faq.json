@@ -1,0 +1,28 @@
+{
+  "preguntas": [
+    {
+      "pregunta": "¿En qué formato les mando mi logo o mi diseño?",
+      "respuesta": "Lo ideal es PDF, AI, SVG o EPS. Si solo tenés una foto o un PNG, mandalo igual: lo revisamos y te decimos si sirve o si hay que redibujarlo."
+    },
+    {
+      "pregunta": "¿Cuánto tardan?",
+      "respuesta": "Los impresos salen entre 24 horas y 3 días hábiles. Rótulos y letras corpóreas, entre 5 y 7 días hábiles desde que aprobás el diseño."
+    },
+    {
+      "pregunta": "¿El diseño se cobra aparte?",
+      "respuesta": "No. El diseño va incluido en tu pedido, con dos rondas de cambios."
+    },
+    {
+      "pregunta": "¿Hasta dónde entregan e instalan?",
+      "respuesta": "Entregamos e instalamos en todo el GAM. Fuera del GAM, consultanos y te cotizamos el traslado."
+    },
+    {
+      "pregunta": "¿Cómo se paga?",
+      "respuesta": "SINPE Móvil, transferencia o efectivo. Pedimos el 50 % para empezar y el resto contra entrega."
+    },
+    {
+      "pregunta": "¿Puedo ver el diseño antes de que lo impriman?",
+      "respuesta": "Sí. Siempre te mandamos el diseño por WhatsApp y no imprimimos nada hasta que lo aprobés."
+    }
+  ]
+}

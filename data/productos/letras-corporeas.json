@@ -1,0 +1,41 @@
+{
+  "nombre": "Letras corpóreas",
+  "mundo": "local",
+  "orden": 2,
+  "publicado": true,
+  "resumen": "Letras con volumen para que tu marca se vea de verdad, de día y de noche.",
+  "precioDesde": 8000,
+  "unidad": "por letra",
+  "entrega": "7 días hábiles",
+  "acabado": "Pintado, espejo o cepillado",
+  "usos": [
+    "Fachadas",
+    "Recepciones y oficinas",
+    "Paredes de marca",
+    "Locales en centros comerciales"
+  ],
+  "tamanos": [
+    "Desde 10 cm de alto por letra",
+    "Grosor de 3 mm a 10 cm"
+  ],
+  "materiales": [
+    "PVC espumado",
+    "Acrílico",
+    "Acero inoxidable",
+    "Con iluminación LED"
+  ],
+  "fotos": [
+    {
+      "foto": "https://images.unsplash.com/photo-1518893494013-481c1d8ed3fd",
+      "alt": "Letras luminosas sobre pared de ladrillo"
+    },
+    {
+      "foto": "https://images.unsplash.com/photo-1496449903678-68ddcb189a24",
+      "alt": "Letras con iluminación LED en una pared"
+    },
+    {
+      "foto": "https://images.unsplash.com/photo-1503876466-1fc5143eda57",
+      "alt": "Letras con iluminación LED en un local"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "nombre": "Vinil translúcido",
+  "mundo": "local",
+  "orden": 3,
+  "publicado": true,
+  "resumen": "Vinil que deja pasar la luz: ideal para vitrinas, cajas de luz y ventanas.",
+  "precioDesde": 12000,
+  "unidad": "por m²",
+  "entrega": "3 días hábiles",
+  "acabado": "Mate",
+  "usos": [
+    "Vitrinas",
+    "Cajas de luz",
+    "Ventanas con privacidad",
+    "Puertas de vidrio"
+  ],
+  "tamanos": [
+    "Rollos de hasta 1,50 m de ancho",
+    "A la medida de tu vidrio"
+  ],
+  "materiales": [
+    "Vinil translúcido",
+    "Vinil esmerilado"
+  ],
+  "fotos": [
+    {
+      "foto": "https://images.unsplash.com/photo-1637665637343-d497d345ed2f",
+      "alt": "Paredes de vidrio de oficina con vinil esmerilado"
+    },
+    {
+      "foto": "https://images.unsplash.com/photo-1763495194929-fd39657dfe6a",
+      "alt": "Vitrina de local decorada de noche"
+    }
+  ]
+}

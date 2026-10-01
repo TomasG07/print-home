@@ -1,0 +1,37 @@
+{
+  "nombre": "Afiches",
+  "mundo": "promo",
+  "orden": 3,
+  "publicado": true,
+  "resumen": "Afiches grandes para paredes, vitrinas y eventos.",
+  "precioDesde": 3500,
+  "unidad": "por unidad",
+  "entrega": "24 horas",
+  "acabado": "Brillante o mate",
+  "usos": [
+    "Eventos y conciertos",
+    "Promociones en vitrina",
+    "Decoración de locales",
+    "Campañas"
+  ],
+  "tamanos": [
+    "Tabloide",
+    "60 × 90 cm",
+    "A la medida"
+  ],
+  "materiales": [
+    "Couché",
+    "Papel fotográfico",
+    "Lona"
+  ],
+  "fotos": [
+    {
+      "foto": "https://images.unsplash.com/photo-1563050860-87d45eaaeabb",
+      "alt": "Afiches impresos de distintos eventos"
+    },
+    {
+      "foto": "https://images.unsplash.com/photo-1711785061880-52b02964c389",
+      "alt": "Afiches pegados en una pared"
+    }
+  ]
+}
