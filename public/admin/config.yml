@@ -125,6 +125,8 @@ collections:
         fields:
           - { name: nombre, label: Nombre, widget: string }
           - { name: eslogan, label: Eslogan, widget: string }
+          - { name: logo, label: "Logo de la cabecera", widget: image, required: false, hint: "Versión simple, se ve chica arriba. Vacío = el nombre en letra script." }
+          - { name: logoCompleto, label: "Logo completo (pie de página)", widget: image, required: false }
           - { name: whatsapp, label: "WhatsApp (con 506, solo números)", widget: string, hint: "Ej.: 50688887777" }
           - { name: mensajeWhatsApp, label: Mensaje inicial de WhatsApp, widget: string }
           - { name: telefono, label: Teléfono, widget: string, required: false }

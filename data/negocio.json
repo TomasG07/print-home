@@ -61,5 +61,7 @@
       "nombre": "TikTok",
       "url": "https://www.tiktok.com/"
     }
-  ]
+  ],
+  "logo": "/img/logo.jpg",
+  "logoCompleto": "/img/logo-completo.jpg"
 }

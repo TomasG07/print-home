@@ -119,7 +119,7 @@ const jsonLdNegocio = () => {
     slogan: negocio.eslogan,
     description: 'Imprenta: rótulos, letras corpóreas, vinil, impresos y decoración para fiestas.',
   };
-  if (negocio.url) { ld.url = negocio.url; ld.image = urlAbs('/img/logo-completo.png'); }
+  if (negocio.url) { ld.url = negocio.url; ld.image = urlAbs(negocio.logoCompleto || '/img/logo-completo.jpg'); }
   if (negocio.telefono) ld.telephone = negocio.telefono;
   if (negocio.email) ld.email = negocio.email;
   if (negocio.direccion) ld.address = { '@type': 'PostalAddress', streetAddress: negocio.direccion, addressCountry: 'CR' };
@@ -146,7 +146,7 @@ ${canonica ? `<link rel="canonical" href="${esc(canonica)}">` : ''}
 <meta property="og:type" content="website">
 <meta property="og:title" content="${esc(titulo)}">
 <meta property="og:description" content="${esc(descripcion)}">
-${canonica ? `<meta property="og:url" content="${esc(canonica)}">\n<meta property="og:image" content="${esc(urlAbs('/img/logo-completo.png'))}">` : ''}
+${canonica ? `<meta property="og:url" content="${esc(canonica)}">\n<meta property="og:image" content="${esc(urlAbs(negocio.logoCompleto || '/img/logo-completo.jpg'))}">` : ''}
 <meta name="theme-color" content="${esc(tema.fondo || '#F4F1EA')}">
 <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -169,11 +169,15 @@ ${pie()}
 `;
 };
 
-const logoSimple = `<span class="logo-script">Print Home</span>`;
+// Logo de la cabecera: la imagen cargada en el panel o, si no hay, el nombre en letra script.
+const logoCabecera = () =>
+  negocio.logo
+    ? `<img class="cabecera__img" src="${esc(negocio.logo)}" alt="${esc(negocio.nombre)}" width="320" height="286">`
+    : `<span class="logo-script">${esc(negocio.nombre)}</span>`;
 
 const encabezado = () => `<header class="cabecera">
   <div class="cabecera__in">
-    <a class="cabecera__logo" href="/" aria-label="Print Home, inicio">${logoSimple}</a>
+    <a class="cabecera__logo" href="/" aria-label="${esc(negocio.nombre)}, inicio">${logoCabecera()}</a>
     <nav class="menu" id="menu" aria-label="Principal">
       <ul>
         <li><a href="/#productos">Productos</a></li>
@@ -190,7 +194,7 @@ const encabezado = () => `<header class="cabecera">
 const pie = () => `<footer class="pie">
   ${barraCmyk('Print Home · Control de color')}
   <div class="pie__in">
-    <img class="pie__logo" src="/img/logo-completo.png" alt="Logo de Print Home, Calidad al instante" width="378" height="378" loading="lazy">
+    <img class="pie__logo" src="${esc(negocio.logoCompleto || '/img/logo-completo.jpg')}" alt="Logo de ${esc(negocio.nombre)}, ${esc(negocio.eslogan)}" width="800" height="716" loading="lazy">
     <div class="pie__col">
       <p class="pie__grande">${esc(textos.pie.frase)}</p>
       ${botonWa(esc(textos.botones.pie), negocio.mensajeWhatsApp + '.', { origen: 'pie' })}
