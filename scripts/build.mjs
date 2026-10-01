@@ -4,6 +4,7 @@
 import { readFile, writeFile, mkdir, cp, rm, readdir } from 'node:fs/promises';
 import { dirname, join, basename } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { createHash } from 'node:crypto';
 
 const raiz = join(dirname(fileURLToPath(import.meta.url)), '..');
 const dist = join(raiz, 'dist');
@@ -17,6 +18,12 @@ const leerCarpeta = async (carpeta) => {
 const base = (process.env.BASE_PATH || '').replace(/\/$/, '');
 const conBase = (html) => (base ? html.replace(/(href|src|data-url)="\/(?!\/)/g, `$1="${base}/`) : html);
 const escribirHtml = (ruta, html) => writeFile(ruta, conBase(html));
+
+// Versión de estilos.css y main.js según su contenido: al cambiarlos, el navegador baja la versión nueva
+// en vez de usar la que tenía guardada.
+const version = async (f) => createHash('md5').update(await readFile(join(raiz, 'src', f))).digest('hex').slice(0, 8);
+const vCss = await version('estilos.css');
+const vJs = await version('main.js');
 
 const porOrden = (a, b) => (a.orden ?? 99) - (b.orden ?? 99);
 
@@ -152,10 +159,10 @@ ${canonica ? `<meta property="og:url" content="${esc(canonica)}">\n<meta propert
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;600&family=Manrope:wght@400;600;800&family=Mr+Dafoe&display=swap">
-<link rel="stylesheet" href="/estilos.css">
+<link rel="stylesheet" href="/estilos.css?v=${vCss}">
 ${estiloTema()}
 ${ld.map((x) => `<script type="application/ld+json">${JSON.stringify(x)}</script>`).join('\n')}
-<script src="/main.js" defer></script>
+<script src="/main.js?v=${vJs}" defer></script>
 </head>
 <body>
 <a class="saltar" href="#contenido">Saltar al contenido</a>
@@ -172,7 +179,7 @@ ${pie()}
 // Logo de la cabecera: la imagen cargada en el panel o, si no hay, el nombre en letra script.
 const logoCabecera = () =>
   negocio.logo
-    ? `<img class="cabecera__img" src="${esc(negocio.logo)}" alt="${esc(negocio.nombre)}" width="320" height="286">`
+    ? `<img class="cabecera__img" src="${esc(negocio.logo)}" alt="${esc(negocio.nombre)}" width="94" height="84">`
     : `<span class="logo-script">${esc(negocio.nombre)}</span>`;
 
 const encabezado = () => `<header class="cabecera">
@@ -435,6 +442,10 @@ await cp(join(raiz, 'public'), dist, { recursive: true });
 await cp(join(raiz, 'src', 'estilos.css'), join(dist, 'estilos.css'));
 await cp(join(raiz, 'src', 'main.js'), join(dist, 'main.js'));
 await writeFile(join(dist, 'img', 'favicon.svg'), favicon);
+// El panel pide config.yml con versión, así nunca usa una configuración vieja guardada en el navegador.
+const vConfig = createHash('md5').update(await readFile(join(raiz, 'public', 'admin', 'config.yml'))).digest('hex').slice(0, 8);
+const adminHtml = join(dist, 'admin', 'index.html');
+await writeFile(adminHtml, (await readFile(adminHtml, 'utf8')).replace('</head>', `  <link href="config.yml?v=${vConfig}" type="text/yaml" rel="cms-config-url">\n</head>`));
 
 const portada = pagina({
   ruta: '/',
