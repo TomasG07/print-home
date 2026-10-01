@@ -21,7 +21,7 @@
   "mapsQuery": "San José, Costa Rica",
   "mensajeWhatsApp": "¡Hola! Vi su sitio web y quiero cotizar",
   "whatsapp": "50687918636",
-  "telefono": "+506 0000-0000",
+  "telefono": "+506 87918636",
   "datosHero": [
     {
       "etiqueta": "Diseño",
@@ -43,8 +43,8 @@
   "hero": {
     "titular": "Que tu negocio se vea desde la otra cuadra.",
     "bajada": "Diseñamos, imprimimos e instalamos todo lo que hace que tu marca se note.",
-    "foto": "/img/trabajos/figuras-trajes-tipicos.jpg",
-    "alt": "Figuras troqueladas con trajes típicos costarricenses frente a la impresora del taller"
+    "foto": "https://images.unsplash.com/photo-1503694978374-8a2fa686963a",
+    "alt": "Máquina de impresión trabajando en el taller"
   },
   "trabajosEntregados": 1200,
   "email": "hola@printhome.example",
@@ -61,7 +61,5 @@
       "nombre": "TikTok",
       "url": "https://www.tiktok.com/"
     }
-  ],
-  "logo": "/img/logo.jpg",
-  "logoCompleto": "/img/logo-completo.jpg"
+  ]
 }
