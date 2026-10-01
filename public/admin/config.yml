@@ -2,7 +2,7 @@
 # Al guardar, los cambios se suben a GitHub y el hosting vuelve a publicar el sitio solo.
 backend:
   name: github
-  repo: USUARIO/print-home   # ← cambiar por el repositorio real
+  repo: TomasG07/print-home
   branch: main
   # En producción, el login con correo y contraseña lo da DecapBridge (decapbridge.com):
   # ahí se crea el sitio y se reemplaza este bloque por el que indica su panel.

@@ -13,6 +13,11 @@ const leerCarpeta = async (carpeta) => {
   const archivos = (await readdir(join(raiz, 'data', carpeta))).filter((f) => f.endsWith('.json'));
   return Promise.all(archivos.map(async (f) => ({ slug: basename(f, '.json'), ...(await leer(join(carpeta, f))) })));
 };
+// Si el sitio vive en una subcarpeta (ej. GitHub Pages: /print-home), BASE_PATH la agrega a todos los enlaces.
+const base = (process.env.BASE_PATH || '').replace(/\/$/, '');
+const conBase = (html) => (base ? html.replace(/(href|src|data-url)="\/(?!\/)/g, `$1="${base}/`) : html);
+const escribirHtml = (ruta, html) => writeFile(ruta, conBase(html));
+
 const porOrden = (a, b) => (a.orden ?? 99) - (b.orden ?? 99);
 
 const negocio = await leer('negocio.json');
@@ -433,15 +438,15 @@ const portada = pagina({
   descripcion: `Rótulos, letras corpóreas, vinil, volantes, tarjetas y decoración para fiestas${negocio.zona ? ` en ${negocio.zona}` : ''}. Diseñamos, imprimimos e instalamos. Cotizá por WhatsApp.`,
   cuerpo: [hero(), barraCmyk(), seccionProductos(), seccionTrabajos(), seccionComoPedir(), barraCmyk(), seccionFaq(), seccionContacto()].join('\n'),
 });
-await writeFile(join(dist, 'index.html'), portada);
+await escribirHtml(join(dist, 'index.html'), portada);
 
 const slugs = catalogo.mundos.flatMap((m) => m.productos);
 for (const [n, slug] of slugs.entries()) {
   await mkdir(join(dist, 'productos', slug), { recursive: true });
-  await writeFile(join(dist, 'productos', slug, 'index.html'), paginaProducto(slug, n));
+  await escribirHtml(join(dist, 'productos', slug, 'index.html'), paginaProducto(slug, n));
 }
 
-await writeFile(join(dist, '404.html'), pagina({
+await escribirHtml(join(dist, '404.html'), pagina({
   ruta: '/404.html',
   titulo: 'Página no encontrada · Print Home',
   descripcion: 'Esta página no existe.',
